@@ -13,6 +13,11 @@
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
+  "config": {
+    "commitizen": {
+    "path": "node_modules/cz-customizable"
+    }
+    },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
@@ -22,6 +27,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
+    "cz-customizable": "^6.3.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
