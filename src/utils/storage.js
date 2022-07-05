@@ -21,7 +21,7 @@ export const getItem = (key) => {
 }
 
 /*
- 删除单个本地存储的数据
+ 删除
  */
 export const removeItem = (key) => {
   localStorage.removeItem(key)
