@@ -14,8 +14,9 @@
 </template>
 
 <script setup>
-import asidevue from './layout/aside.vue'
-import dropdown from './layout/dropdown.vue'
+import asidevue from './aside.vue'
+// import asidevue from './Sidebar/SidebarMenu.vue'
+import dropdown from './dropdown.vue'
 </script>
 <style lang="scss" scoped>
 .el-header,
@@ -25,7 +26,7 @@ import dropdown from './layout/dropdown.vue'
   display: flex;
   align-items: center;
   justify-content: space-between;
-  span{
+  span {
     display: inline-block;
     margin-left: 700px;
     font-weight: 600;

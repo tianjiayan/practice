@@ -1,5 +1,6 @@
 import axios from 'axios'
 import loading from './loading'
+import store from '@/store/index'
 // import { useStore } from 'vuex'
 // const store = useStore()
 const service = axios.create({
@@ -18,7 +19,7 @@ service.interceptors.request.use(
     // const token = store.getters.token
 
     console.log(config, '132')
-    console.log(token,'222');
+    console.log(token, '222')
     return config
   },
   function (error) {
@@ -35,6 +36,9 @@ service.interceptors.response.use(
     // 关闭loading加载
     loading.close()
 
+    if (response.headers.authorization) {
+      store.commit('user/setToken', response.headers.authorization)
+    }
     console.log(response, 'token')
     return response
   },
