@@ -18,12 +18,12 @@
           <span>系统管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="/sys/users">用户管理</el-menu-item>
+          <el-menu-item index="/users">用户管理</el-menu-item>
 
-          <el-menu-item index="/sys/roles">角色管理</el-menu-item>
+          <el-menu-item index="/roles">角色管理</el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group>
-          <el-menu-item index="/sys/menus">菜单管理</el-menu-item>
+          <el-menu-item index="/menus">菜单管理</el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group></el-menu-item-group>
       </el-sub-menu>
@@ -32,7 +32,7 @@
           <el-icon><location /></el-icon>
           <span>系统工具</span>
         </template>
-        <el-menu-item index="/sys/dicts">数字字典</el-menu-item>
+        <el-menu-item index="/dicts">数字字典</el-menu-item>
       </el-sub-menu>
     </el-menu>
   </el-aside>
