@@ -14,8 +14,9 @@ var _elementPlus = _interopRequireDefault(require("element-plus"));
 
 require("element-plus/dist/index.css");
 
+require("./permission");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// import './permission'
 var app = (0, _vue.createApp)(_App["default"]);
 app.use(_elementPlus["default"]).use(_store["default"]).use(_router["default"]).mount('#app');

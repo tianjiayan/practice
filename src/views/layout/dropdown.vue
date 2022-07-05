@@ -37,15 +37,11 @@ const handleToHome = () => {
 }
 //退出登录
 const handleLogout = async () => {
-  const response = await user.logout()
-  console.log(response)
-  if (response.data.msg == '操作成功') {
-    try {
-      await store.dispatch('user/logout')
-      router.push('/login')
-    } catch (err) {
-      console.log(err)
-    }
+  try {
+    await store.dispatch('user/logout')
+    router.push('/login')
+  } catch (err) {
+    console.log(err)
   }
 }
 </script>

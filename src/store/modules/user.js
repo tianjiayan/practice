@@ -1,4 +1,5 @@
 import { getItem, setItem, removeItem } from '../../utils/storage'
+import { resetRouter } from '../../utils/removeRouter'
 import user from '../../api/user'
 export default {
   namespaced: true,
@@ -36,7 +37,7 @@ export default {
       }
     },
     logout({ commit }) {
-      // resetRouter(), commit('setToken', '')
+      resetRouter(), commit('setToken', '')
       commit('setUserInfo', {})
       removeItem('token')
       removeItem('userInfo')
