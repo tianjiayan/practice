@@ -1,8 +1,19 @@
-import request from "../utils/request"
+import request from '../utils/request'
 
-const login = (data)=>{
-    return request({url:'',method:'POST',data})
+const login = (username,password,code,token) => {
+  return request({ url: `login?username=${username}&password=${password}&code=${code}&token=${token}`, method: 'POST' })
 }
-export default{
-    login
+const captcha = () => {
+  return request({
+    url: 'captcha',
+    method: 'GET'
+  })
+}
+const logout = ()=>{
+  return request({url:'logout',method:'POST'})
+}
+export default {
+  login,
+  captcha,
+  logout
 }
