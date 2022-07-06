@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <template v-if="item && !item.children">
     <el-menu-item :index="item.path">
       <el-icon>
@@ -38,4 +38,4 @@ const props = defineProps({
 const item = props.menuList
 </script>
 <style scoped lang='scss'>
-</style>
+</style> -->

@@ -22,9 +22,15 @@ const logout = () => {
 const getUserInfo = () => {
   return request({ url: '/sys/userInfo', method: 'GET' })
 }
+
+//获取权限数据
+const getNav = () => {
+  return request({ url: '/sys/menu/nav', method: 'GET' })
+}
 export default {
   login,
   captcha,
   logout,
-  getUserInfo
+  getUserInfo,
+  getNav
 }

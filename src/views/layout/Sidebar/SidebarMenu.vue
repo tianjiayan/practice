@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <el-menu
     active-text-color="#fff"
     background-color="#304156"
@@ -36,4 +36,4 @@ const menuList = computed(() => {
 .el-menu{
   border-right : none;
 }
-</style>
+</style> -->

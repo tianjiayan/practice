@@ -23,6 +23,10 @@ export default {
         const data = privateRoutes.filter((item) => item.name === name)
         routes.push(...data)
       })
+      routes.push({
+        path: '/:catchAll(.*)',
+        redirect: '/404'
+      })
       commit('setRoutes', routes)
       return routes
     }

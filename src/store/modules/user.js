@@ -5,7 +5,8 @@ export default {
   namespaced: true,
   state: () => ({
     token: getItem('token') || '',
-    userInfo: {}
+    userInfo: {},
+    nav: ''
   }),
   mutations: {
     setToken(state, token) {
@@ -14,6 +15,9 @@ export default {
     },
     setUserInfo(state, userInfo) {
       state.userInfo = userInfo
+    },
+    SET_NAV(state, nav) {
+      state.nav = nav
     }
   },
   actions: {
@@ -26,7 +30,10 @@ export default {
     //         console.log(err);
     //     }
     // }
-
+    async login({ commit }, payload) {
+      const response = await user.login(payload)
+      return response
+    },
     async getUserInfo({ commit }) {
       try {
         const response = await user.getUserInfo()
@@ -35,6 +42,12 @@ export default {
       } catch (err) {
         console.log(err)
       }
+    },
+    async getNav({ commit }) {
+      const response = await user.getNav()
+      commit('SET_NAV', response)
+      console.log('nav', response)
+      return response
     },
     logout({ commit }) {
       resetRouter(), commit('setToken', '')

@@ -11,8 +11,11 @@ var getters = {
   userInfo: function userInfo(state) {
     return state.user.userInfo;
   },
-  hasUserInfo: function hasUserInfo(state) {
-    return JSON.stringify(state.user.userInfo) !== '{}';
+  // hasUserInfo: (state) => {
+  //   return JSON.stringify(state.user.userInfo) !== '{}'
+  // },
+  nav: function nav(state) {
+    return state.user.nav;
   },
   tagsview: function tagsview(state) {
     return state.tagsview.tagsView;

@@ -1,7 +1,8 @@
 <template>
   <el-dropdown trigger="click" @command="handleCommand">
     <span class="el-dropdown-link">
-      test
+      <el-avatar :size="30" :src="$store.getters.userInfo.data.data.avatar" />
+      {{ $store.getters.userInfo.data.data.username || '' }}
       <el-icon class="el-icon--right">
         <arrow-down />
       </el-icon>

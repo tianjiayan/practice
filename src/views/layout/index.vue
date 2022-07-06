@@ -1,7 +1,9 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <asidevue></asidevue>
+      <el-aside width="200px">
+        <asidevue></asidevue>
+      </el-aside>
       <el-container>
         <el-header>
           <span> VueAdmin后台管理系统 </span>
@@ -17,10 +19,10 @@
 </template>
 
 <script setup>
-import asidevue from './aside.vue'
-// import asidevue from './Sidebar/SidebarMenu.vue'
+// import asidevue from './aside.vue'
+import asidevue from './Sidebar'
 import dropdown from './dropdown.vue'
-import TagsView from '@/components/TagsView.vue';
+import TagsView from '@/components/TagsView.vue'
 </script>
 <style lang="scss" scoped>
 .el-header,
@@ -57,5 +59,9 @@ import TagsView from '@/components/TagsView.vue';
 .el-container {
   // margin-bottom: 40px;
   height: 100%;
+}
+.el-aside{
+  height: 100%;
+  border-right: 0;
 }
 </style>
