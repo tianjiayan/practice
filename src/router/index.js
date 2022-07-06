@@ -37,7 +37,7 @@ export const privateRoutes = [Users, Roles, Menus, Dicts]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [...publicRoutes]
+  routes: [...publicRoutes,...privateRoutes]
 })
 
 console.log(router.getRoutes())

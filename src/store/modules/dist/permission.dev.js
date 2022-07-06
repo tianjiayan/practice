@@ -21,33 +21,26 @@ var _default = {
     routes: _router.publicRoutes
   },
   mutations: {
-    setRoutes: function setRoutes(state, newRoutes) {
-      state.routes = [].concat(_toConsumableArray(_router.publicRoutes), _toConsumableArray(newRoutes));
+    SET_ROUTES: function SET_ROUTES(state, routes) {
+      state.routes = [].concat(_toConsumableArray(_router.publicRoutes), _toConsumableArray(routes));
     }
   },
   actions: {
-    /**
-     * 根据权限筛选路由
-     */
     filterRoutes: function filterRoutes(_ref, menus) {
       var commit = _ref.commit;
-      // 当用户登录之后是加载所有的私有路由表还是加载他所拥有的私有表
-      // menus 登录之后后台所返回的用户所有的路由权限数据
-      // privateRoutes 自定义的所有私有路由表
-      var routes = []; // 过滤出用户所拥有的私有路由表
-
+      // 过滤出用户所有的私有路由表
+      var routes = [];
       menus.forEach(function (name) {
         var data = _router.privateRoutes.filter(function (item) {
           return item.name === name;
         });
 
         routes.push.apply(routes, _toConsumableArray(data));
-      });
-      routes.push({
+      }), routes.push({
         path: '/:catchAll(.*)',
         redirect: '/404'
       });
-      commit('setRoutes', routes);
+      commit('SET_ROUTES', routes);
       return routes;
     }
   }

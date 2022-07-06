@@ -111,10 +111,8 @@ const handlLogin = async () => {
         token.value
       )
       console.log(response)
-      if (response.data.msg == '操作成功') {
-        // store.commit('user/setToken',token.value)
-        router.push('/')
-      }
+      // store.commit('user/setToken',token.value)
+      router.push('/')
       // localStorage.setItem('token', response.token.token)
     }
   })

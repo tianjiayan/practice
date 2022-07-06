@@ -44,84 +44,84 @@ var _default = {
     //         console.log(err);
     //     }
     // }
-    login: function login(_ref, payload) {
+    // async login({ commit }, payload) {
+    //   const response = await user.login(payload)
+    //   return response
+    // },
+    getUserInfo: function getUserInfo(_ref) {
       var commit, response;
-      return regeneratorRuntime.async(function login$(_context) {
+      return regeneratorRuntime.async(function getUserInfo$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               commit = _ref.commit;
-              _context.next = 3;
-              return regeneratorRuntime.awrap(_user["default"].login(payload));
+              _context.prev = 1;
+              _context.next = 4;
+              return regeneratorRuntime.awrap(_user["default"].getUserInfo());
 
-            case 3:
+            case 4:
               response = _context.sent;
+              commit('setUserInfo', response);
               return _context.abrupt("return", response);
 
-            case 5:
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](1);
+              console.log(_context.t0);
+
+            case 12:
             case "end":
               return _context.stop();
           }
         }
-      });
+      }, null, null, [[1, 9]]);
     },
-    getUserInfo: function getUserInfo(_ref2) {
+    getNav: function getNav(_ref2) {
       var commit, response;
-      return regeneratorRuntime.async(function getUserInfo$(_context2) {
+      return regeneratorRuntime.async(function getNav$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               commit = _ref2.commit;
-              _context2.prev = 1;
-              _context2.next = 4;
-              return regeneratorRuntime.awrap(_user["default"].getUserInfo());
+              _context2.next = 3;
+              return regeneratorRuntime.awrap(_user["default"].getNav());
 
-            case 4:
+            case 3:
               response = _context2.sent;
-              commit('setUserInfo', response);
+              commit('SET_NAV', response);
+              console.log('nav', response);
               return _context2.abrupt("return", response);
 
-            case 9:
-              _context2.prev = 9;
-              _context2.t0 = _context2["catch"](1);
-              console.log(_context2.t0);
-
-            case 12:
+            case 7:
             case "end":
               return _context2.stop();
           }
         }
-      }, null, null, [[1, 9]]);
+      });
     },
-    getNav: function getNav(_ref3) {
+    logout: function logout(_ref3) {
       var commit, response;
-      return regeneratorRuntime.async(function getNav$(_context3) {
+      return regeneratorRuntime.async(function logout$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
               commit = _ref3.commit;
               _context3.next = 3;
-              return regeneratorRuntime.awrap(_user["default"].getNav());
+              return regeneratorRuntime.awrap(_user["default"].logout());
 
             case 3:
               response = _context3.sent;
-              commit('SET_NAV', response);
-              console.log('nav', response);
-              return _context3.abrupt("return", response);
+              commit('setToken', '');
+              commit('setUserInfo', '');
+              commit('SET_NAV');
+              console.log(response);
 
-            case 7:
+            case 8:
             case "end":
               return _context3.stop();
           }
         }
       });
-    },
-    logout: function logout(_ref4) {
-      var commit = _ref4.commit;
-      (0, _removeRouter.resetRouter)(), commit('setToken', '');
-      commit('setUserInfo', {});
-      (0, _storage.removeItem)('token');
-      (0, _storage.removeItem)('userInfo');
     }
   }
 };

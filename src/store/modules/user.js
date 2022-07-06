@@ -30,10 +30,10 @@ export default {
     //         console.log(err);
     //     }
     // }
-    async login({ commit }, payload) {
-      const response = await user.login(payload)
-      return response
-    },
+    // async login({ commit }, payload) {
+    //   const response = await user.login(payload)
+    //   return response
+    // },
     async getUserInfo({ commit }) {
       try {
         const response = await user.getUserInfo()
@@ -49,11 +49,12 @@ export default {
       console.log('nav', response)
       return response
     },
-    logout({ commit }) {
-      resetRouter(), commit('setToken', '')
-      commit('setUserInfo', {})
-      removeItem('token')
-      removeItem('userInfo')
+    async logout({ commit }) {
+      const response = await user.logout()
+      commit('setToken', '')
+      commit('setUserInfo', '')
+      commit('SET_NAV')
+      console.log(response)
     }
   }
 }

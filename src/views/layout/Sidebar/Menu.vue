@@ -6,12 +6,14 @@
     text-color="#fff"
     router
   >
-    <menu-tree v-for="item in menuList" :menu="item" :key="item"></menu-tree>
+    <menu-tree v-for="item in menuList" :menu="item" :key="item">
+      {{menuList}}
+    </menu-tree>
   </el-menu>
 </template>
 
 <script setup>
-import MenuTree from './MenuTiree'
+import MenuTree from './MenuTree'
 import { useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { filterMenuData } from '../../../utils/menu'
@@ -24,7 +26,7 @@ const menuList = computed(() => {
   return filterMenuData(generateMenus(routes))
 })
 
-// console.log(menuList)
+console.log(menuList,'123')
 </script>
 <style scoped lang='scss'>
 </style>

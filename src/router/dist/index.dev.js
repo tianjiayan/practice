@@ -66,7 +66,7 @@ var privateRoutes = [_Users["default"], _Roles["default"], _Menus["default"], _D
 exports.privateRoutes = privateRoutes;
 var router = (0, _vueRouter.createRouter)({
   history: (0, _vueRouter.createWebHashHistory)(),
-  routes: [].concat(publicRoutes)
+  routes: [].concat(publicRoutes, privateRoutes)
 });
 console.log(router.getRoutes());
 var _default = router; // import { createRouter, createWebHashHistory } from 'vue-router'
