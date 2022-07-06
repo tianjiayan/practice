@@ -33,19 +33,25 @@ export const publicRoutes = [
         meta: { title: '菜单管理', icon: 'el-icon-menu' }
       },
       {
-        path: '',
-        meta: { title: '系统工具', icon: 'el-icon-s-tools' },
-        name: 'sys:tools',
-        component: null,
-        children: [
-          {
-            path: '/dicts',
-            name: 'sys:dict:list',
-            component: () => import('../views/dicts'),
-            meta: { title: '数字字典' }
-          }
-        ]
+        path: '/dicts',
+        name: 'sys:dict:list',
+        component: () => import('../views/dicts'),
+        meta: { title: '数字字典' }
       }
+      // {
+      //   path: '',
+      //   meta: { title: '系统工具', icon: 'el-icon-s-tools' },
+      //   name: 'sys:tools',
+      //   component: null,
+      //   children: [
+      //     {
+      //       path: '/dicts',
+      //       name: 'sys:dict:list',
+      //       component: () => import('../views/dicts'),
+      //       meta: { title: '数字字典' }
+      //     }
+      //   ]
+      // }
     ]
   },
   {

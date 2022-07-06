@@ -7,6 +7,7 @@
           <span> VueAdmin后台管理系统 </span>
           <dropdown></dropdown>
         </el-header>
+        <TagsView></TagsView>
         <el-main>
           <router-view></router-view>
         </el-main>
@@ -19,6 +20,7 @@
 import asidevue from './aside.vue'
 // import asidevue from './Sidebar/SidebarMenu.vue'
 import dropdown from './dropdown.vue'
+import TagsView from '@/components/TagsView.vue';
 </script>
 <style lang="scss" scoped>
 .el-header,
